@@ -9,12 +9,10 @@ class Cart_item extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'user_id',
-        'property_id',
-    ];
+    protected $guarded = ['added_date'];
 
     protected $casts = [
-        'id' => 'string'
+        'user_id' => 'string',
+        'property_id' => 'string',
     ];
 }
