@@ -38,4 +38,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'user_id' => 'string',
     ];
+
+    // default nya dia id jadi diganti dulu biar gak error pas login
+    protected $primaryKey = 'user_id';
+
+    // fix undefined array key "password" pas Auth::attempt
+    public function getAuthPassword() {
+        return $this->user_password;
+    }
 }

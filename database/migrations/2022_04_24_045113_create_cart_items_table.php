@@ -16,7 +16,7 @@ class CreateCartItemsTable extends Migration
         Schema::create('cart_items', function (Blueprint $table) {
             $table->uuid('user_id');
             $table->uuid('property_id');
-            $table->timestamp('added_time');
+            $table->timestamps();
 
             $table->primary(['user_id', 'property_id']);
             $table->foreign('user_id')->references('user_id')->on('users');

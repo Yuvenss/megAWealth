@@ -20,6 +20,7 @@ class CreateOfficesTable extends Migration
             $table->string('office_contact_name');
             $table->string('office_phone_num', 15);
             $table->string('office_image');
+            $table->timestamps();
         });
     }
 
