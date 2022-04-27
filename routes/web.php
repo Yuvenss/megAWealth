@@ -1,10 +1,12 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\OfficeController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +37,7 @@ Route::middleware('user')->group(function () {
 });
 Route::middleware('admin')->group(function () {
     Route::resource('/offices', OfficeController::class);
+    Route::resource('/properties', PropertyController::class);
+    Route::get('/properties/{property}/finish', [TransactionController::class, 'finishTransaction']);
     Route::post('/logoutAdmin', [AuthController::class, 'logoutAdmin']);
 });

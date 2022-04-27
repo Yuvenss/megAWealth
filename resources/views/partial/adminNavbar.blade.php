@@ -15,7 +15,7 @@
           <a class="nav-link" href="/offices" style="color: white; font-size:16pt{{ $active == 'manage company' ? '; font-weight:750' : '' }}">Manage Company</a>
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'manage real estates' ? '; font-weight:750' : '' }}">Manage Real Estates</a>
+          <a class="nav-link" href="/properties" style="color: white; font-size:16pt{{ $active == 'manage real estates' ? '; font-weight:750' : '' }}">Manage Real Estates</a>
         </li>
         <li class="nav-item me-3">
           <form action="/logoutAdmin" method="post">

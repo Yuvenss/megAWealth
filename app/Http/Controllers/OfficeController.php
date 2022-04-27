@@ -6,6 +6,7 @@ use App\Models\Office;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class OfficeController extends Controller
 {
@@ -58,7 +59,7 @@ class OfficeController extends Controller
         $office->office_address = $request->address;
         $office->office_contact_name = $request->contact;
         $office->office_phone_num = $request->phone;
-        $office->office_image = $request->file('image')->store('profile-pict');
+        $office->office_image = $request->file('image')->store('office-pict');
         $office->save();
 
         return redirect('/offices')->with('success', 'Office Added Successfully!!');
@@ -124,6 +125,8 @@ class OfficeController extends Controller
      */
     public function destroy(Office $office)
     {
+        Storage::delete($office->office_image);
+
         Office::destroy($office->office_id);
 
         return redirect('/offices')->with('success', 'Office Deleted Successfully!!');
