@@ -40,7 +40,7 @@
     <div class="row row-cols-md-5 g-4">
         <div class="col">
           <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="/frontend/office1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-center">Memphis Office</h5>
               <p class="card-text text-center">2584 Madison Ave</p>
@@ -53,7 +53,7 @@
         </div>
         <div class="col">
           <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="/frontend/office2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-center">San Antonio Office</h5>
               <p class="card-text text-center">2584 Madison Ave</p>
@@ -66,7 +66,7 @@
         </div>
         <div class="col">
           <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="/frontend/office3.jfif" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-center">Washington Office</h5>
               <p class="card-text text-center">2584 Madison Ave</p>
@@ -79,7 +79,7 @@
         </div>
         <div class="col">
             <div class="card h-100">
-              <img src="..." class="card-img-top" alt="...">
+              <img src="/frontend/office4.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title text-center">Colombus Office</h5>
                 <p class="card-text text-center">2584 Madison Ave</p>
@@ -92,7 +92,7 @@
         </div>
         <div class="col">
             <div class="card h-100">
-              <img src="..." class="card-img-top" alt="...">
+              <img src="/frontend/office5.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title text-center">New York Office</h5>
                 <p class="card-text text-center">2584 Madison Ave</p>
