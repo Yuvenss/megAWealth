@@ -23,6 +23,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 Route::get('/home', [FrontEndController::class, 'home']);
+Route::get('/aboutUs', [FrontEndController::class, 'aboutUs']);
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'registerPageUser']);
@@ -34,7 +35,6 @@ Route::middleware('guest')->group(function () {
 });
 Route::middleware('user')->group(function () {
     Route::post('/logout', [AuthController::class, 'logoutUser']);
-    Route::get('/aboutUs', [FrontEndController::class, 'aboutUs']);
 });
 Route::middleware('admin')->group(function () {
     Route::resource('/offices', OfficeController::class);
