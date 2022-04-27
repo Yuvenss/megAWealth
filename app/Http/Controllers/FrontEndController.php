@@ -12,4 +12,11 @@ class FrontEndController extends Controller
             'active' => 'home'
         ]);
     }
+
+    public function aboutUs () {
+        return view('aboutUs', [
+            'title' => 'About Us',
+            'active' => 'aboutUs'
+        ]);
+    }
 }

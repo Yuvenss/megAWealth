@@ -34,6 +34,7 @@ Route::middleware('guest')->group(function () {
 });
 Route::middleware('user')->group(function () {
     Route::post('/logout', [AuthController::class, 'logoutUser']);
+    Route::get('/aboutUs', [FrontEndController::class, 'aboutUs']);
 });
 Route::middleware('admin')->group(function () {
     Route::resource('/offices', OfficeController::class);
