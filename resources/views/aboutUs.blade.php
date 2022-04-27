@@ -32,5 +32,74 @@
         our service to real estates with the included service of real estates lawyers. Today, our <br>
         company have 5 offices throughout the states and is planning to build more.
     </p>
+</div>
+
+<p class="fs-1 text-white text-center fw-bold pt-3">Our Office</p>
+
+<div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Memphis Office</h5>
+          <p class="card-text text-center">2584 Madison Ave</p>
+          <br>
+            <p class="card-text text-center">Contact</p>
+            <p class="card-text text-center">Natalee Sheryl</p>
+            <p class="card-text text-center">+1234567890</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">San Antonio Office</h5>
+          <p class="card-text text-center">2584 Madison Ave</p>
+          <br>
+            <p class="card-text text-center">Contact</p>
+            <p class="card-text text-center">Natalee Sheryl</p>
+            <p class="card-text text-center">+1234567890</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Washington Office</h5>
+          <p class="card-text text-center">2584 Madison Ave</p>
+          <br>
+            <p class="card-text text-center">Contact</p>
+            <p class="card-text text-center">Natalee Sheryl</p>
+            <p class="card-text text-center">+1234567890</p>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center">Colombus Office</h5>
+            <p class="card-text text-center">2584 Madison Ave</p>
+            <br>
+              <p class="card-text text-center">Contact</p>
+              <p class="card-text text-center">Natalee Sheryl</p>
+              <p class="card-text text-center">+1234567890</p>
+          </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center">New York Office</h5>
+            <p class="card-text text-center">2584 Madison Ave</p>
+            <br>
+              <p class="card-text text-center">Contact</p>
+              <p class="card-text text-center">Natalee Sheryl</p>
+              <p class="card-text text-center">+1234567890</p>
+          </div>
+    </div>
     
 </div>
+</div>
+@endsection
