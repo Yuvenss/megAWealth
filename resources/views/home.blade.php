@@ -18,6 +18,13 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    @if (session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: -80px">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="col-4 m-auto mb-5" style="background-color: rgba(0,0,0,.4); color: white; text-align:center; font-size:28pt; font-weight: 750">Find Your Future Home</div>
     <form class="d-flex col-11 m-auto" action="" method="GET" style="justify-content: space-between">
         @csrf

@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item me-3">
-          <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'home' ? '; font-weight:750' : '' }}">Home</a>
+          <a class="nav-link" href="/home" style="color: white; font-size:16pt{{ $active == 'home' ? '; font-weight:750' : '' }}">Home</a>
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'manage company' ? '; font-weight:750' : '' }}">Manage Company</a>
+          <a class="nav-link" href="/offices" style="color: white; font-size:16pt{{ $active == 'manage company' ? '; font-weight:750' : '' }}">Manage Company</a>
         </li>
         <li class="nav-item me-3">
           <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'manage real estates' ? '; font-weight:750' : '' }}">Manage Real Estates</a>

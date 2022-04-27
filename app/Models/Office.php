@@ -9,6 +9,8 @@ class Office extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'office_id';
+
     protected $guarded = ['office_id'];
 
     protected $casts = [

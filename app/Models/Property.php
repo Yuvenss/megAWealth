@@ -9,6 +9,8 @@ class Property extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'property_id';
+
     protected $guarded = ['property_id'];
 
     protected $casts = [

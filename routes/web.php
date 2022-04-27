@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\OfficeController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -29,7 +30,10 @@ Route::middleware('guest')->group(function () {
     Route::get('/loginAdmin', [AuthController::class, 'loginPageAdmin']);
     Route::post('/loginAdmin', [AuthController::class, 'loginAdmin']);
 });
-Route::middleware('auth')->group(function () {
+Route::middleware('user')->group(function () {
     Route::post('/logout', [AuthController::class, 'logoutUser']);
+});
+Route::middleware('admin')->group(function () {
+    Route::resource('/offices', OfficeController::class);
     Route::post('/logoutAdmin', [AuthController::class, 'logoutAdmin']);
 });
