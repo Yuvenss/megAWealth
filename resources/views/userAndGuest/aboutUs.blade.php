@@ -40,14 +40,14 @@
     <div class="row row-cols-md-5 g-4">
         @foreach ($offices as $office)
             <div class="col">
-                <div class="card h-100">
-                    <img src="{{ asset($office->office_image) }}" class="card-img-top" alt="...">
+                <div class="card h-100" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
+                    <img src="{{ asset($office->office_image) }}" class="card-img-top" alt="..." style="height: 30vh">
                     <div class="card-body">
-                    <h5 class="card-title text-center">{{ $office->office_name }} Office</h5>
-                    <p class="card-text text-center">{{ $office->office_address }}</p>
-                    <br>
-                        <p class="card-text text-center">Contact</p>
-                        <p class="card-text text-center">{{ $office->office_contact_name }}</p>
+                        <h5 class="card-title text-center">{{ $office->office_name }} Office</h5>
+                        <p class="card-text text-center">{{ $office->office_address }}</p>
+                        <br>
+                        <p class="card-text text-center fw-bold m-0">Contact</p>
+                        <p class="card-text text-center m-0">{{ $office->office_contact_name }}</p>
                         <p class="card-text text-center">{{ $office->office_phone_num }}</p>
                     </div>
                 </div>
