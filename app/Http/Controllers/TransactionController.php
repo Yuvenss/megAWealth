@@ -14,6 +14,8 @@ class TransactionController extends Controller
             'property_status' => 'Sold'
         ]);
 
+        Cart_item::where('property_id', $property->property_id)->delete();
+
         return redirect('/properties')->with('success', 'Transaction completed successfully');
     }
 
@@ -31,10 +33,7 @@ class TransactionController extends Controller
     }
 
     public function removeFromCart (Property $property) {
-        Cart_item::where([
-            ['user_id', auth()->user()->user_id],
-            ['property_id', $property->property_id]
-        ])->delete();
+        Cart_item::where('property_id', $property->property_id)->delete();
 
         Property::where('property_id', $property->property_id)->update([
             'property_status' => 'Available'

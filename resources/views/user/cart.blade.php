@@ -21,7 +21,7 @@
         <div class="mt-3" style="text-align: center; color: white; font-size: 20pt; font-weight: 700">
             <div>No Data in Cart yet!</div>
         </div>
-    @endif
+    @else
     <div class="row mt-4">
         @foreach ($cartItems as $item)
             <div class="col-sm-3">
@@ -44,8 +44,9 @@
         {{ $cartItems->links() }}
     </div>
     <div class="d-flex mt-4 mb-5" style="justify-content: space-around">
-        <a href="/checkout" class="btn" onclick="return confirm('Are you sure you want to remove this item?')" style="background-color: #65B5FF; color: white;font-weight: 600;font-size: 20pt">Checkout</a>
+        <a href="/checkout" class="btn" style="background-color: #65B5FF; color: white;font-weight: 600;font-size: 20pt">Checkout</a>
     </div>
+    @endif
 </div>
 
 @endsection
