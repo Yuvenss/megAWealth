@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Office;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Cart_item;
 use App\Models\Property;
 
 class FrontEndController extends Controller
@@ -43,6 +44,14 @@ class FrontEndController extends Controller
                 ['property_sales_type', 'Sale'],
                 ['property_status', 'Available']
             ])->paginate(4)
+        ]);
+    }
+
+    public function cart () {
+        return view('user.cart', [
+            'title' => 'Cart',
+            'active' => 'cart',
+            'cartItems' => Cart_item::where('user_id', auth()->user()->user_id)->paginate(4)
         ]);
     }
 }

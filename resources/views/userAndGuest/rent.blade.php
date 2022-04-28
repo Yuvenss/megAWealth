@@ -6,6 +6,13 @@
 @else
     @include('partial.guestNavbar')
 @endauth
+@if (session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <div class="container mt-5">
     <form class="d-flex m-auto" action="" method="GET" style="justify-content: space-between">
         @csrf
@@ -27,7 +34,7 @@
                         <div class="d-flex mt-4" style="justify-content: space-around">
                             <a
                             @auth
-                                href="/addToCart"
+                                href="/cart/{{ $property->property_id }}/add"
                             @else
                                 href="/login"
                             @endauth

@@ -16,4 +16,8 @@ class Property extends Model
     protected $casts = [
         'property_id' => 'string'
     ];
+
+    public function cart_item () {
+        return $this->hasMany(Cart_item::class, 'property_id', 'property_id');
+    }
 }

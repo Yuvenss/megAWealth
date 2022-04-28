@@ -15,4 +15,14 @@ class Cart_item extends Model
         'user_id' => 'string',
         'property_id' => 'string',
     ];
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class, 'property_id', 'property_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
 }

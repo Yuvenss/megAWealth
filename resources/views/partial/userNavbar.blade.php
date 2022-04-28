@@ -21,7 +21,7 @@
           <a class="nav-link" href="/rent" style="color: white; font-size:16pt{{ $active == 'rent' ? '; font-weight:750' : '' }}">Rent</a>
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'cart' ? '; font-weight:750' : '' }}">Cart</a>
+          <a class="nav-link" href="/cart" style="color: white; font-size:16pt{{ $active == 'cart' ? '; font-weight:750' : '' }}">Cart</a>
         </li>
         <li class="nav-item me-3">
           <form action="/logout" method="post">

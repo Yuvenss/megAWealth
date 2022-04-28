@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function getAuthPassword() {
         return $this->user_password;
     }
+
+    public function cart_item () {
+        return $this->hasMany(Cart_item::class, 'user_id', 'user_id');
+    }
 }

@@ -34,6 +34,10 @@ Route::middleware('guest')->group(function () {
 });
 Route::middleware('user')->group(function () {
     Route::post('/logout', [AuthController::class, 'logoutUser']);
+    Route::get('/cart', [FrontEndController::class, 'cart']);
+    Route::get('/cart/{property}/add', [TransactionController::class, 'addToCart']);
+    Route::get('/cart/{property}/remove', [TransactionController::class, 'removeFromCart']);
+    Route::get('/checkout', [TransactionController::class, 'checkout']);
 });
 Route::middleware('userAndGuest')->group(function () {
     Route::get('/aboutUs', [FrontEndController::class, 'aboutUs']);
