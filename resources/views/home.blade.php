@@ -40,7 +40,7 @@
         href="/buy"
     @endif
     class="card" style="width: 20rem; text-decoration: none; color: black; border-radius: 10px" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
-        <img src="/frontend/buyicon.jpg" class="card-img-top" alt="..." style="height: 200px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+        <img src="/frontend/buyicon.jpg" class="card-img-top" alt="..." style="height: 240px; border-top-left-radius: 10px; border-top-right-radius: 10px">
         <div class="card-body" style="text-align: center">
             <h5 class="card-title">Buy Real Estates</h5>
         </div>
@@ -52,7 +52,7 @@
         href="/rent"
     @endif
     class="card" style="width: 20rem; text-decoration: none; color: black; border-radius: 10px" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
-        <img src="/frontend/renticon.jpg" class="card-img-top" alt="..." style="height: 200px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+        <img src="/frontend/renticon.jpg" class="card-img-top" alt="..." style="height: 240px; border-top-left-radius: 10px; border-top-right-radius: 10px">
         <div class="card-body" style="text-align: center">
             <h5 class="card-title">Rent Real Estates</h5>
         </div>
@@ -64,7 +64,7 @@
         href="/aboutUs"
     @endif
     class="card" style="width: 20rem; text-decoration: none; color: black; border-radius: 10px" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
-        <img src="/frontend/abouticon.jpg" class="card-img-top" alt="..." style="height: 200px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+        <img src="/frontend/abouticon.jpg" class="card-img-top" alt="..." style="height: 240px; border-top-left-radius: 10px; border-top-right-radius: 10px">
         <div class="card-body" style="text-align: center">
             <h5 class="card-title">About Us</h5>
         </div>
