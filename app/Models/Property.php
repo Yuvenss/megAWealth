@@ -18,6 +18,6 @@ class Property extends Model
     ];
 
     public function cart_item () {
-        return $this->hasMany(Cart_item::class, 'property_id', 'property_id');
+        return $this->hasOne(Cart_item::class, 'property_id', 'property_id');
     }
 }
