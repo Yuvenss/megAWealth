@@ -25,7 +25,13 @@
                         <p class="card-text">{{ $property->property_address }}</p>
                         <span class="badge bg-warning">{{ $property->property_type }}</span>
                         <div class="d-flex mt-4" style="justify-content: space-around">
-                            <a href="" class="btn" style="background-color: #65B5FF; color: white;font-weight: 600">Rent</a>
+                            <a
+                            @auth
+                                href="/addToCart"
+                            @else
+                                href="/login"
+                            @endauth
+                            class="btn" style="background-color: #65B5FF; color: white;font-weight: 600">Rent</a>
                         </div>
                     </div>
                 </div>

@@ -11,21 +11,7 @@
     @include('partial.guestNavbar')
 @endauth
 
-<div style="padding-top:80px; background-image: url('/frontend/aboutusbanner.jpg'); height: 550px; background-attachment: fixed; background-size: cover; background-position:bottom">
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: -80px">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-    @if (session()->has('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: -80px">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-            {{ session('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+<div style="padding-top:80px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/frontend/aboutusbanner.jpg'); height: 550px; background-attachment: fixed; background-size: cover; background-position:bottom">
     <p class="fs-1 text-white text-center fw-bold pt-5">About Our Company</p>
     <p class="fs-3 text-white text-center">Our company was founded at 2008 by our founder Renanda. At that time, we started as <br>
         law firm specializing in real estate and construction. In 2012, our company expanded <br>
@@ -41,7 +27,7 @@
         @foreach ($offices as $office)
             <div class="col">
                 <div class="card h-100" onmouseover="cardOver(this)" onmouseout="cardOut(this)" style="border-radius: 10px">
-                    <img src="{{ asset($office->office_image) }}" class="card-img-top" alt="..." style="height: 30vh">
+                    <img src="{{ asset($office->office_image) }}" class="card-img-top" alt="..." style="height: 30vh; border-top-left-radius: 10px; border-top-right-radius: 10px">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ $office->office_name }} Office</h5>
                         <p class="card-text text-center">{{ $office->office_address }}</p>
