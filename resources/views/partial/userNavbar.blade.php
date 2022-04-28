@@ -15,10 +15,10 @@
           <a class="nav-link" href="/aboutUs" style="color: white; font-size:16pt{{ $active == 'aboutUs' ? '; font-weight:750' : '' }}">About Us</a>
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'but' ? '; font-weight:750' : '' }}">Buy</a>
+          <a class="nav-link" href="/buy" style="color: white; font-size:16pt{{ $active == 'buy' ? '; font-weight:750' : '' }}">Buy</a>
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'rent' ? '; font-weight:750' : '' }}">Rent</a>
+          <a class="nav-link" href="/rent" style="color: white; font-size:16pt{{ $active == 'rent' ? '; font-weight:750' : '' }}">Rent</a>
         </li>
         <li class="nav-item me-3">
           <a class="nav-link" href="#" style="color: white; font-size:16pt{{ $active == 'cart' ? '; font-weight:750' : '' }}">Cart</a>
