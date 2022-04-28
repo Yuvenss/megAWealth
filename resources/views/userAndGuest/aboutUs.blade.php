@@ -11,7 +11,7 @@
     @include('partial.guestNavbar')
 @endauth
 
-<div style="padding-top:80px; background-image: url('/frontend/aboutusbanner.jpg'); height: 60vh; background-attachment: fixed; background-size: cover; background-position:bottom">
+<div style="padding-top:80px; background-image: url('/frontend/aboutusbanner.jpg'); height: 550px; background-attachment: fixed; background-size: cover; background-position:bottom">
     @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: -80px">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
