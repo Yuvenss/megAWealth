@@ -10,7 +10,7 @@
 @else
     @include('partial.guestNavbar')
 @endauth
-<div style="padding-top:80px; background-image: url('/frontend/home.jpg'); height: 60vh; background-attachment: fixed; background-size: cover; background-position:center">
+<div style="padding-top:80px; background-image: url('/frontend/home.jpg'); height: 550px; background-attachment: fixed; background-size: cover; background-position:center">
     @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: -80px">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -25,7 +25,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <div class="col-4 m-auto mb-5" style="background-color: rgba(0,0,0,.4); color: white; text-align:center; font-size:28pt; font-weight: 750">Find Your Future Home</div>
+    <div class="col-4 m-auto mb-5 mt-5" style="background-color: rgba(0,0,0,.4); color: white; text-align:center; font-size:28pt; font-weight: 750">Find Your Future Home</div>
     <form class="d-flex col-11 m-auto" action="" method="GET" style="justify-content: space-between">
         @csrf
         <input class="form-control" type="text" placeholder="Enter a City, Property Type, Buy or Rent..." name="search" style="width: 90%">
