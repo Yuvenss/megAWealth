@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Database\Seeders\OfficeSeeder;
+use Database\Seeders\PropertySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +25,11 @@ class DatabaseSeeder extends Seeder
             'user_email' => 'megawealth@gmail.com',
             'user_password' => bcrypt('password'),
             'is_admin' => true
+        ]);
+
+        $this->call([
+            OfficeSeeder::class,
+            PropertySeeder::class
         ]);
     }
 }

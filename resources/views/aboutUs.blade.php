@@ -38,71 +38,24 @@
 
 <div class="container-fluid">
     <div class="row row-cols-md-5 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="/frontend/office1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">Memphis Office</h5>
-              <p class="card-text text-center">2584 Madison Ave</p>
-              <br>
-                <p class="card-text text-center">Contact</p>
-                <p class="card-text text-center">Natalee Sheryl</p>
-                <p class="card-text text-center">+1234567890</p>
+        @foreach ($offices as $office)
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ asset($office->office_image) }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title text-center">{{ $office->office_name }} Office</h5>
+                    <p class="card-text text-center">{{ $office->office_address }}</p>
+                    <br>
+                        <p class="card-text text-center">Contact</p>
+                        <p class="card-text text-center">{{ $office->office_contact_name }}</p>
+                        <p class="card-text text-center">{{ $office->office_phone_num }}</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/frontend/office2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">San Antonio Office</h5>
-              <p class="card-text text-center">2584 Madison Ave</p>
-              <br>
-                <p class="card-text text-center">Contact</p>
-                <p class="card-text text-center">Natalee Sheryl</p>
-                <p class="card-text text-center">+1234567890</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/frontend/office3.jfif" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">Washington Office</h5>
-              <p class="card-text text-center">2584 Madison Ave</p>
-              <br>
-                <p class="card-text text-center">Contact</p>
-                <p class="card-text text-center">Natalee Sheryl</p>
-                <p class="card-text text-center">+1234567890</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-              <img src="/frontend/office4.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Colombus Office</h5>
-                <p class="card-text text-center">2584 Madison Ave</p>
-                <br>
-                  <p class="card-text text-center">Contact</p>
-                  <p class="card-text text-center">Natalee Sheryl</p>
-                  <p class="card-text text-center">+1234567890</p>
-              </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-              <img src="/frontend/office5.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">New York Office</h5>
-                <p class="card-text text-center">2584 Madison Ave</p>
-                <br>
-                  <p class="card-text text-center">Contact</p>
-                  <p class="card-text text-center">Natalee Sheryl</p>
-                  <p class="card-text text-center">+1234567890</p>
-              </div>
-            </div>
-        </div>
+        @endforeach
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        {{ $offices->links() }}
     </div>
 </div>
 @endsection

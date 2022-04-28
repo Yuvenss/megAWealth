@@ -25,7 +25,7 @@
         @foreach ($offices as $office)
             <div class="col-sm-3">
                 <div class="card" style="border-radius: 10px">
-                    <img src="{{ asset('storage/'.$office->office_image) }}" class="card-img-top" alt="..." style="height: 160px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+                    <img src="{{ file_exists(public_path($office->office_image)) ? asset($office->office_image) : asset('storage/'.$office->office_image) }}" class="card-img-top" alt="..." style="height: 160px; border-top-left-radius: 10px; border-top-right-radius: 10px">
                     <div class="card-body" style="text-align: center">
                         <h5 class="card-title" style="margin: 0">{{ $office->office_name }} Office</h5>
                         <p class="card-text">{{ $office->office_address }}</p>

@@ -25,7 +25,7 @@
         @foreach ($properties as $property)
             <div class="col-sm-3">
                 <div class="card" style="border-radius: 10px">
-                    <img src="{{ asset('storage/'.$property->property_image) }}" class="card-img-top" alt="..." style="height: 160px; border-top-left-radius: 10px; border-top-right-radius: 10px">
+                    <img src="{{ file_exists(public_path($property->property_image)) ? asset($property->property_image) : asset('storage/'.$property->property_image) }}" class="card-img-top" alt="..." style="height: 160px; border-top-left-radius: 10px; border-top-right-radius: 10px">
                     <div class="card-body" style="text-align: center">
                         <h5 class="card-title" style="margin: 0">${{ $property->property_price }}{{ $property->property_sales_type == 'Rent' ? ' / month' : '' }}</h5>
                         <p class="card-text">{{ $property->property_address }}</p>

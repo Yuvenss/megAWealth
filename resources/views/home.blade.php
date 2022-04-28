@@ -45,7 +45,7 @@
             <h5 class="card-title">Rent Real Estates</h5>
         </div>
     </a>
-    <a href="" class="card" style="width: 18rem; text-decoration: none; color: black; border-radius: 10px" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
+    <a href="/aboutUs" class="card" style="width: 18rem; text-decoration: none; color: black; border-radius: 10px" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
         <img src="/frontend/abouticon.jpg" class="card-img-top" alt="..." style="height: 160px; border-top-left-radius: 10px; border-top-right-radius: 10px">
         <div class="card-body" style="text-align: center">
             <h5 class="card-title">About Us</h5>

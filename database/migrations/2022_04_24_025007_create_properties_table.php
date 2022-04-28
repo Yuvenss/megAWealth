@@ -19,7 +19,7 @@ class CreatePropertiesTable extends Migration
             $table->text('property_address');
             $table->string('property_image');
             $table->enum('property_sales_type', ['Rent', 'Sale']);
-            $table->enum('property_status', ['Available', 'Booked', 'Sold']);
+            $table->enum('property_status', ['Available', 'Booked', 'Sold'])->default('Available');
             $table->bigInteger('property_price');
             $table->timestamps();
         });
