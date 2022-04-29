@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 d-flex" style="align-items: center">
-            <img src="{{ asset('storage/'.$office->office_image) }}" alt="" class="mt-3 mb-5" style="width: 100%">
+            <img src="{{ file_exists(public_path($office->office_image)) ? asset($office->office_image) : asset('storage/'.$office->office_image) }}" alt="" class="mt-3 mb-5" style="width: 100%">
         </div>
         <div class="col-md-6">
             <div class=" mt-3 p-4 mb-5" style="background-color: white; border-radius: 10px">

@@ -23,6 +23,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 Route::get('/home', [FrontEndController::class, 'home']);
+Route::get('/search', [FrontEndController::class, 'search']);
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'registerPageUser']);

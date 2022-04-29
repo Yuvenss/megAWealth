@@ -26,7 +26,7 @@
         </div>
     @endif
     <div class="col-4 m-auto mb-5 mt-5" style="background-color: rgba(0,0,0,.4); color: white; text-align:center; font-size:28pt; font-weight: 750">Find Your Future Home</div>
-    <form class="d-flex col-11 m-auto" action="" method="GET" style="justify-content: space-between">
+    <form class="d-flex col-11 m-auto" action="/search" method="GET" style="justify-content: space-between">
         @csrf
         <input class="form-control" type="text" placeholder="Enter a City, Property Type, Buy or Rent..." name="search" style="width: 90%">
         <input class="btn" type="submit" value="Search" style="width: 8%; color: white; background-color: #FF9F46; font-weight: 600; font-size: 14pt">

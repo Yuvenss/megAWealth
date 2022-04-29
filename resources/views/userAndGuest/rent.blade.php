@@ -14,14 +14,20 @@
     </div>
 @endif
 <div class="container mt-5">
-    <form class="d-flex m-auto" action="" method="GET" style="justify-content: space-between">
+    <form class="d-flex m-auto" action="/search" method="GET" style="justify-content: space-between">
         @csrf
+        <input type="hidden" name="sales_type" value="Rent">
         <input class="form-control" type="text" placeholder="Enter a City, Property Type..." name="search" style="width: 90%">
         <input class="btn" type="submit" value="Search" style="width: 8%; color: white; background-color: #FF9F46; font-weight: 600; font-size: 14pt">
     </form>
     <div class="mt-4" style="color: white; font-size: 28pt; font-weight: 700">
         <div>Showing Real Estates for Rent</div>
     </div>
+    @if (count($properties) == 0)
+        <div class="mt-3" style="text-align: center; color: white; font-size: 20pt; font-weight: 700">
+            <div>No Data Property!</div>
+        </div>
+    @endif
     <div class="row mt-4">
         @foreach ($properties as $property)
             <div class="col-sm-3">

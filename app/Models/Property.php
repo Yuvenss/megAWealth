@@ -17,6 +17,16 @@ class Property extends Model
         'property_id' => 'string'
     ];
 
+    public function scopeFilter ($query, array $filters) {
+        $query->when($filters['sales_type'] ?? false, function ($query, $sales_type) {
+            return $query->where('property_sales_type', $sales_type);
+        })->when($filters['type'] ?? false, function ($query, $type) {
+            return $query->where('property_type', $type);
+        })->when($filters['address'] ?? false, function ($query, $address) {
+            return $query->where('property_address', 'like', '%'.$address.'%');
+        });
+    }
+
     public function cart_item () {
         return $this->hasOne(Cart_item::class, 'property_id', 'property_id');
     }

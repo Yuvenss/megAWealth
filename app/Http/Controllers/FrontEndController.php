@@ -17,6 +17,56 @@ class FrontEndController extends Controller
         ]);
     }
 
+    private function preSearch () {
+        $search = array_map('trim', explode(',', request('search')));
+        $filters = array();
+        $filters['address'] = '';
+        if(request('sales_type')) {
+            $filters['sales_type'] = request('sales_type');
+            foreach ($search as $item) {
+                if(strcasecmp($item, 'House') == 0) {
+                    $filters['type'] = 'House';
+                } else if (strcasecmp($item, 'Apartment') == 0) {
+                    $filters['type'] = 'Apartment';
+                } else {
+                    $filters['address'] .= ' '.$item;
+                }
+            }
+        } else {
+            foreach ($search as $item) {
+                if(strcasecmp($item, 'House') == 0) {
+                    $filters['type'] = 'House';
+                } else if (strcasecmp($item, 'Apartment') == 0) {
+                    $filters['type'] = 'Apartment';
+                } else if (strcasecmp($item, 'Rent') == 0) {
+                    $filters['sales_type'] = 'Rent';
+                } else if (strcasecmp($item, 'Buy') == 0) {
+                    $filters['sales_type'] = 'Sale';
+                } else {
+                    $filters['address'] .= ' '.$item;
+                }
+            }
+        }
+        if (empty($filters['address'])) {
+            unset($filters['address']);
+        } else {
+            $filters['address'] = trim($filters['address']);
+        }
+        return $filters;
+    }
+
+    public function search () {
+        if (empty(request('search'))) {
+            return back();
+        }
+        $filters = $this->preSearch();
+        return view('search', [
+            'title' => 'Search Results',
+            'active' => '',
+            'properties' => Property::filter($filters)->paginate(4)->withQueryString()
+        ]);
+    }
+
     public function aboutUs () {
         return view('userAndGuest.aboutUs', [
             'title' => 'About Us',
