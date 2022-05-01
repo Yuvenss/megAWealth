@@ -27,6 +27,14 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true
         ]);
 
+        User::create([
+            'user_id' => Str::uuid(),
+            'user_name' => 'user',
+            'user_email' => 'user@yahoo.com',
+            'user_password' => bcrypt('12345678'),
+            'is_admin' => false
+        ]);
+
         $this->call([
             OfficeSeeder::class,
             PropertySeeder::class
