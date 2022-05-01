@@ -57,12 +57,15 @@ class AuthController extends Controller
             'password' => 'required|min:8',
         ]);
 
+        $rememberMe = (!empty($request->remember_me)) ? true : false;
+
         if (Auth::attempt([
             'user_email' => $request->email,
             'password' => $request->password,
             'is_admin' => false
         ])) {
             $request->session()->regenerate();
+            Auth::login(Auth::user(), $rememberMe);
             return redirect()->intended('/home');
         }
 

@@ -49,7 +49,7 @@
                     @enderror
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" style="border: 1.5px solid #F76F12">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" style="border: 1.5px solid #F76F12">
                     <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                 </div>
                 <div class="d-flex justify-content-center">
