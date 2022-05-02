@@ -24,7 +24,7 @@
         <input class="btn" type="submit" value="Search" style="width: 8%; color: white; background-color: #FF9F46; font-weight: 600; font-size: 14pt">
     </form>
     <div class="mt-4" style="color: white; font-size: 28pt; font-weight: 700">
-        <div>Showing Search Result for "{{ request('search') }}{{ request('sales_type') ? ', '.request('sales_type') : '' }}"</div>
+        <div>Showing Search Result for "{{ request('search') }}{{ request('sales_type') ? (request('sales_type') == 'Rent' ? ', Rent' : ', Buy') : '' }}"</div>
     </div>
     @if (count($properties) == 0)
         <div class="mt-3" style="text-align: center; color: white; font-size: 20pt; font-weight: 700">

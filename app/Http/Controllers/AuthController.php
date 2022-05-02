@@ -57,7 +57,7 @@ class AuthController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        $rememberMe = (!empty($request->remember_me)) ? true : false;
+        $rememberMe = (!empty($request->remember)) ? true : false;
 
         if (Auth::attempt([
             'user_email' => $request->email,
