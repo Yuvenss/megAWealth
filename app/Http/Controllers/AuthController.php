@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
 {
@@ -57,7 +58,7 @@ class AuthController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        $rememberMe = (!empty($request->remember_me)) ? true : false;
+        // $rememberMe = (!empty($request->remember_me)) ? true : false;
 
         if (Auth::attempt([
             'user_email' => $request->email,
@@ -65,7 +66,8 @@ class AuthController extends Controller
             'is_admin' => false
         ])) {
             $request->session()->regenerate();
-            Auth::login(Auth::user(), $rememberMe);
+            Cookie::queue('LoginCookie', $request->input('email'), 5);
+            Auth::login(Auth::user()/*, $rememberMe*/);
             return redirect()->intended('/home');
         }
 
