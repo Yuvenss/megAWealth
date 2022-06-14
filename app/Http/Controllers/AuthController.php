@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
@@ -46,7 +47,7 @@ class AuthController extends Controller
         $user->user_id = Str::uuid();
         $user->user_name = $request->name;
         $user->user_email = $request->email;
-        $user->user_password = bcrypt($request->password);
+        $user->user_password = Hash::make($request->password);
         $user->save();
 
         return redirect('/login')->with('success', 'Registration Successful!! Please Login');
@@ -66,7 +67,8 @@ class AuthController extends Controller
             'is_admin' => false
         ])) {
             $request->session()->regenerate();
-            Cookie::queue('LoginCookie', $request->input('email'), 5);
+            Cookie::queue('LoginEmail', $request->input('email'), 5);
+            Cookie::queue('LoginPassword', $request->input('password'), 5);
             Auth::login(Auth::user()/*, $rememberMe*/);
             return redirect()->intended('/home');
         }

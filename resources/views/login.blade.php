@@ -36,14 +36,14 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email address here..." style="border: 1.5px solid #F76F12" value="{{ Cookie::get('LoginCookie') !== NULL ? Cookie::get('LoginCookie') : old('email') }}" {{-- value="{{ old('email') }}" --}} autofocus>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email address here..." style="border: 1.5px solid #F76F12" value="{{ Cookie::get('LoginEmail') !== NULL ? Cookie::get('LoginEmail') : old('email') }}" {{-- value="{{ old('email') }}" --}} autofocus>
                     @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="pass" class="form-label">Password</label>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="pass" name="password" placeholder="Enter your password here..." style="border: 1.5px solid #F76F12">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="pass" name="password" placeholder="Enter your password here..." style="border: 1.5px solid #F76F12" value="{{ Cookie::get('LoginPassword') !== NULL ? Cookie::get('LoginPassword') : '' }}">
                     @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
