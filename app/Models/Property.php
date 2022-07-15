@@ -30,4 +30,8 @@ class Property extends Model
     public function cart_item () {
         return $this->hasOne(Cart_item::class, 'property_id', 'property_id');
     }
+
+    public function transaction () {
+        return $this->hasOne(Transaction::class, 'property_id', 'property_id');
+    }
 }

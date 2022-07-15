@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Models\Cart_item;
+use App\Models\Transaction;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -43,11 +45,17 @@ class TransactionController extends Controller
     }
 
     public function checkout () {
-        $cart_items = Cart_item::where('user_id', auth()->user()->user_id)->get();
+        $cart_items = auth()->user()->cart_items;
         foreach ($cart_items as $item) {
             Property::where('property_id', $item->property_id)->update([
                 'property_status' => 'Sold'
             ]);
+
+            $transaction = new Transaction();
+            $transaction->transaction_id = Str::uuid();
+            $transaction->user_id = auth()->user()->user_id;
+            $transaction->property_id = $item->property_id;
+            $transaction->save();
         }
         Cart_item::where('user_id', auth()->user()->user_id)->delete();
 
