@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Cart_item;
+use App\Models\Transaction;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Cart_item;
-use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cookie;
+use App\Http\Resources\TransactionResource;
 
 class APIController extends Controller
 {
@@ -69,10 +70,19 @@ class APIController extends Controller
             'email' => 'required|email|max:255',
         ]);
 
-        $data = Transaction::query()->select('*')->get();
-        return response()->json([
-            'status' => 'Transaction Success',
-            'data' => $data,
-        ]);
+        if ($request->input('email') != auth()->user()->user_email) {
+            return response()->json([
+                'status' => 'Failed',
+                'message' => 'Email Unauthenticated',
+            ]);
+        } else {
+            $data = Transaction::getTransaction(auth()->user()->user_id);
+            return response()->json([
+                'data' => TransactionResource::collection($data),
+                'user_id' => [
+                    'id' => auth()->user()->user_id,
+                ]
+            ]);
+        }
     }
 }

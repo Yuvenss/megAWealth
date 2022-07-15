@@ -32,7 +32,7 @@ class Transaction extends Model
         return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 
-    public function getTransaction ($user_id) {
+    public static function getTransaction ($user_id) {
         return DB::table('transactions')
             ->join('properties', 'transactions.property_id', '=', 'properties.property_id')
             ->where('transactions.user_id', $user_id)
