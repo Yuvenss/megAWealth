@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
     Route::post('/register', [APIController::class, 'registerUser']);
     Route::post('/login', [APIController::class, 'loginUser']);
+    Route::post('/transaction', [APIController::class, 'transaction'])->middleware('auth:api');
 
     Route::middleware('auth:api')->get('/transaction', function () {
         return "test";

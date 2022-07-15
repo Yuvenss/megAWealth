@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Cart_item;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
@@ -59,6 +60,18 @@ class APIController extends Controller
 
         return response()->json([
             'status' => 'Login Failed',
+        ]);
+    }
+
+    public function transaction(Request $request){
+        $request->validate([
+            'email' => 'required|email|max:255',
+        ]);
+
+        $data = Cart_item::query()->select('*')->get();
+        return response()->json([
+            'status' => 'Transaction Success',
+            'data' => $data,
         ]);
     }
 }
