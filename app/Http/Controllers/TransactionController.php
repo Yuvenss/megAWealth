@@ -16,6 +16,12 @@ class TransactionController extends Controller
             'property_status' => 'Sold'
         ]);
 
+        $transaction = new Transaction();
+        $transaction->transaction_id = Str::uuid();
+        $transaction->user_id = $property->cart_item->user_id;
+        $transaction->property_id = $property->property_id;
+        $transaction->save();
+
         Cart_item::where('property_id', $property->property_id)->delete();
 
         return redirect('/properties')->with('success', 'Transaction completed successfully');

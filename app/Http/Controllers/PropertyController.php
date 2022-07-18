@@ -6,6 +6,7 @@ use App\Models\Property;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
@@ -127,6 +128,8 @@ class PropertyController extends Controller
     public function destroy(Property $property)
     {
         Storage::delete($property->property_image);
+
+        Transaction::where('property_id', $property->property_id)->delete();
 
         Property::destroy($property->property_id);
 
