@@ -35,7 +35,7 @@
 <div class="d-flex mt-5 mb-5" style="justify-content: space-evenly">
     <a
     @if (auth()->user() && auth()->user()->is_admin)
-        href="/properties"
+        href=""
     @else
         href="/buy"
     @endif
@@ -47,7 +47,7 @@
     </a>
     <a
     @if (auth()->user() && auth()->user()->is_admin)
-        href="/properties"
+        href=""
     @else
         href="/rent"
     @endif
@@ -59,7 +59,7 @@
     </a>
     <a
     @if (auth()->user() && auth()->user()->is_admin)
-        href="/offices"
+        href=""
     @else
         href="/aboutUs"
     @endif
