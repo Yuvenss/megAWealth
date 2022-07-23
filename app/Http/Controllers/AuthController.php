@@ -92,6 +92,13 @@ class AuthController extends Controller
             'password' => $request->password,
             'is_admin' => true
         ])) {
+            if ($request->remember) {
+                Cookie::queue('LoginEmail', $request->input('email'), 5);
+                Cookie::queue('LoginPassword', $request->input('password'), 5);
+            } else {
+                Cookie::queue(Cookie::forget('LoginEmail'));
+                Cookie::queue(Cookie::forget('LoginPassword'));
+            }
             $request->session()->regenerate();
             return redirect()->intended('/home');
         }
