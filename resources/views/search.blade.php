@@ -62,7 +62,7 @@
                                 @else
                                     href="/login"
                                 @endauth
-                                class="btn" style="background-color: #65B5FF; color: white;font-weight: 600">{{ $property->property_sales_type }}</a>
+                                class="btn" style="background-color: #65B5FF; color: white;font-weight: 600">{{ ($property->property_sales_type == 'Sale') ? 'Buy' : 'Rent' }}</a>
                             @endif
                         </div>
                     </div>
